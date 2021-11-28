@@ -248,6 +248,8 @@ class Interface:
             end (bool) (optional): whether or not the message needs to be escaped with the letter 'q'
         """
 
+        curses.noecho()
+
         # Clear all displays
         self.repr_window.clear()
         self.result_window.clear()
@@ -334,9 +336,10 @@ class Interface:
                                 curses.wrapper(checkpoint)
                                 return
                             case 'n' | 'no':
-                                return
+                                exit()
                             case _:
-                                self.result_window.addstr('Invalid input')
+                                self.result_window.addstr(2, 0, 'Invalid input')
+                                self.result_window.refresh()
                 # Display death message
                 else:
                     sleep(2)
