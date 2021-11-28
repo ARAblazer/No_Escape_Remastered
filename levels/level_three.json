@@ -1,0 +1,296 @@
+{
+    "Cellar": {
+        "n": "Tunnel",
+        "w": "Blue Room",
+        "e": "Red Room",
+        "coords": [7, 3]
+    },
+    "Tunnel": {
+        "status": "bound",
+        "unbind": "Rusted Dagger",
+        "item": "monster",
+        "n": "Exit",
+        "s": "Cellar",
+        "coords": [7, 2]
+    },
+    "Red Room": {
+        "s": "Yellow Room",
+        "w": "Cellar",
+        "n": "Orange Room",
+        "e": "Dank Hallway",
+        "coords": [8, 3]
+    },
+    "Dank Hallway": {
+        "n": "Cave Entrance",
+        "s": "Eerie Passage",
+        "w": "Red Room",
+        "coords": [9, 3]
+    },
+    "Eerie Passage": {
+        "n": "Dank Hallway",
+        "e": "Tool Room",
+        "coords": [9, 4]
+    },
+    "Tool Room": {
+        "item": "key",
+        "w": "Eerie Passage",
+        "coords": [10, 4]
+    },
+    "Orange Room": {
+        "n": "Cave of Tears",
+        "s": "Red Room",
+        "e": "Cave Entrance",
+        "coords": [8, 2]
+    },
+    "Cave Entrance": {
+        "w": "Orange Room",
+        "s": "Dank Hallway",
+        "e": "Cave of Bones",
+        "coords": [9, 2]
+    },
+    "Cave of Bones": {
+        "w": "Cave Entrance",
+        "n": "Cave of Flesh",
+        "coords": [10, 2]
+    },
+    "Cave of Flesh": {
+        "item": "monster",
+        "n": "Cave of Blood",
+        "s": "Cave of Bones",
+        "coords": [10, 1]
+    },
+    "Cave of Blood": {
+        "w": "Cave of Sweat",
+        "e": "Torture Chamber",
+        "s": "Cave of Flesh",
+        "coords": [10, 0]
+    },
+    "Torture Chamber": {
+        "item": "hammer",
+        "w": "Cave of Blood",
+        "coords": [11, 0]
+    },
+    "Cave of Sweat": {
+        "e": "Cave of Blood",
+        "s": "Cave of Tears",
+        "coords": [8, 0],
+        "width": 2
+    },
+    "Cave of Tears": {
+        "n": "Cave of Sweat",
+        "s": "Orange Room",
+        "coords": [8, 1]
+    },
+    "Blue Room": {
+        "n": "Purple Room",
+        "s": "Green Room",
+        "e": "Cellar",
+        "w": "Portal",
+        "coords": [6, 3]
+    },
+    "Purple Room": {
+        "s": "Blue Room",
+        "n": "Gaping Ravine",
+        "coords": [6, 2]
+    },
+    "Gaping Ravine": {
+        "n": "Smithy",
+        "s": "Purple Room",
+        "w": "Rickety Bridge",
+        "coords": [6, 1]
+    },
+    "Rickety Bridge": {
+        "n": "Armory",
+        "e": "Gaping Ravine",
+        "coords": [5, 1]
+    },
+    "Armory": {
+        "status": "locked",
+        "item": "sword",
+        "e": "Smithy",
+        "s": "Rickety Bridge",
+        "coords": [5, 0]
+    },
+    "Smithy": {
+        "item": "monster",
+        "w": "Armory",
+        "s": "Gaping Ravine",
+        "coords": [6, 0]
+    },
+    "Yellow Room": {
+        "n": "Red Room",
+        "s": "East Chamber",
+        "coords": [8, 4]
+    },
+    "East Chamber": {
+        "n": "Yellow Room",
+        "w": "West Chamber",
+        "s": "East Hallway",
+        "coords": [8, 5]
+    },
+    "East Hallway": {
+        "n": "East Chamber",
+        "w": "Magisterium",
+        "e": "Mess Hall",
+        "coords": [8, 6]
+    },
+    "Mess Hall": {
+        "w": "East Hallway",
+        "s": "Kitchen",
+        "coords": [9, 6]
+    },
+    "Kitchen": {
+        "item": "monster",
+        "n": "Mess Hall",
+        "s": "Arcanum",
+        "coords": [9, 7]
+    },
+    "Arcanum": {
+        "item": "Glistening Ring",
+        "n": "Kitchen",
+        "e": "Portal",
+        "status": "oneway",
+        "coords": [9, 8]
+    },
+    "Green Room": {
+        "n": "Blue Room",
+        "s": "West Chamber",
+        "coords": [6, 4]
+    },
+    "West Chamber": {
+        "item": "monster",
+        "n": "Green Room",
+        "w": "Sitting Room",
+        "e": "East Chamber",
+        "coords": [6, 5],
+        "width": 2
+    },
+    "Sitting Room": {
+        "e": "West Chamber",
+        "w": "Bright Corridor",
+        "s": "West Hallway",
+        "coords": [5, 5]
+    },
+    "West Hallway": {
+        "n": "Sitting Room",
+        "e": "Magisterium",
+        "coords": [5, 6]
+    },
+    "Magisterium": {
+        "item": "monster",
+        "w": "West Hallway",
+        "s": "Stone Hallway",
+        "e": "East Hallway",
+        "coords": [6, 6],
+        "width": 2
+    },
+    "Stone Hallway": {
+        "n": "Magisterium",
+        "s": "Barracks",
+        "coords": [6, 7]
+    },
+    "Barracks": {
+        "n": "Stone Hallway",
+        "w": "Short Corridor",
+        "s": "Bath House",
+        "e": "Infirmary",
+        "coords": [6, 8]
+    },
+    "Bath House": {
+        "item": "monster",
+        "n": "Barracks",
+        "coords": [6, 9]
+    },
+    "Infirmary": {
+        "item": "hammer",
+        "w": "Barracks",
+        "e": "Secret Passage",
+        "coords": [7, 8]
+    },
+    "Secret Passage": {
+        "w": "Infirmary",
+        "e": "Arcanum",
+        "status": "oneway",
+        "coords": [8, 8]
+    },
+    "Bright Corridor": {
+        "e": "Sitting Room",
+        "w": "Ingredient Room",
+        "s": "Well-lit Corridor",
+        "coords": [4, 5]
+    },
+    "Ingredient Room": {
+        "e": "Bright Corridor",
+        "n": "Alchemy Lab",
+        "coords": [3, 5]
+    },
+    "Alchemy Lab": {
+        "item": "monster",
+        "s": "Ingredient Room",
+        "e": "Vat Room",
+        "coords": [3, 4]
+    },
+    "Vat Room": {
+        "item": "Strange Tome",
+        "status": "bound",
+        "unbind": "Glistening Ring",
+        "w": "Alchemy Lab",
+        "coords": [4, 4]
+    },
+    "Well-lit Corridor": {
+        "n": "Bright Corridor",
+        "s": "Dim Corridor",
+        "coords": [3, 6],
+        "width": 2,
+        "n_placement": 6
+    },
+    "Dim Corridor": {
+        "item": "monster",
+        "status": "bound",
+        "unbind": "Strange Tome",
+        "n": "Well-lit Corridor",
+        "w": "Murky Room",
+        "s": "Dark Corridor",
+        "coords": [2, 7],
+        "width": 2,
+        "n_placement": 6
+    },
+    "Murky Room": {
+        "status": "strange",
+        "e": "Dim Corridor",
+        "w": "Altar Room",
+        "coords": [1, 7]
+    },
+    "Altar Room": {
+        "item": "Rusted Dagger",
+        "e": "Murky Room",
+        "coords": [0, 7]
+    },
+    "Dark Corridor": {
+        "n": "Dim Corridor",
+        "e": "Long Corridor",
+        "coords": [2, 8]
+
+    },
+    "Long Corridor": {
+        "item": "monster",
+        "w": "Dark Corridor",
+        "e": "Short Corridor",
+        "coords": [3, 8],
+        "width": 2
+    },
+    "Short Corridor": {
+        "w": "Long Corridor",
+        "e": "Barracks",
+        "coords": [5, 8]
+    },
+    "Portal": {
+        "w": "Arcanum",
+        "e": "Blue Room",
+        "coords": [0, 0]
+    },
+    "Exit": {
+        "s": "Tunnel",
+        "coords": [7, 1]
+    }
+}

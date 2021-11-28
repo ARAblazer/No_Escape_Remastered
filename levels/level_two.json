@@ -1,0 +1,112 @@
+{
+    "Stairwell": {
+        "n": "North Wing",
+        "w": "West Wing",
+        "s": "South Wing",
+        "e": "East Wing",
+        "coords": [5, 4]
+    },
+    "West Wing": {
+        "e": "Stairwell",
+        "n": "Art-lined Hall",
+        "s": "Abandoned Bedroom",
+        "coords": [3, 4],
+        "width": 2
+    },
+    "North Wing": {
+        "item": "monster",
+        "n": "Elevator Shaft",
+        "s": "Stairwell",
+        "e": "Library",
+        "w": "Mirrored Corridor",
+        "coords": [5, 2],
+        "height": 2
+    },
+    "South Wing": {
+        "item": "monster",
+        "n": "Stairwell",
+        "e": "Kitchenette",
+        "w": "...",
+        "coords": [5, 5],
+        "height": 2,
+        "e_placement": 3,
+        "w_placement": 3
+    },
+    "East Wing": {
+        "item": "monster",
+        "n": "Master Bedroom",
+        "s": "Bathroom",
+        "e": "Empty Room",
+        "w": "Stairwell",
+        "coords": [6, 4],
+        "width": 2,
+        "n_placement": 6,
+        "s_placement": 6
+    },
+    "Empty Room": {
+        "w": "East Wing",
+        "n": "Wardrobe",
+        "coords": [8, 4]
+    },
+    "...": {
+        "status": "strange",
+        "item": "monster",
+        "s": "Mysterious Room",
+        "e": "South Wing",
+        "coords": [4, 6]
+    },
+    "Library": {
+        "w": "North Wing",
+        "coords": [6, 2]
+    },
+    "Lounge": {
+        "item": "key",
+        "e": "Mirrored Corridor",
+        "s": "Art-lined Hall",
+        "coords": [3, 2]
+    },
+    "Mirrored Corridor": {
+        "e": "North Wing",
+        "w": "Lounge",
+        "coords": [4, 2]
+    },
+    "Art-lined Hall": {
+        "n": "Lounge",
+        "s": "West Wing",
+        "coords": [3, 3]
+    },
+    "Abandoned Bedroom": {
+        "item": "hammer",
+        "n": "West Wing",
+        "coords": [3, 5]
+    },
+    "Kitchenette": {
+        "w": "South Wing",
+        "coords": [6, 6]
+    },
+    "Bathroom": {
+        "n": "East Wing",
+        "coords": [7, 5]
+    },
+    "Master Bedroom": {
+        "s": "East Wing",
+        "coords": [7, 3]
+    },
+    "Wardrobe": {
+        "status": "locked",
+        "item": "sword",
+        "s": "Empty Room",
+        "coords": [8, 3]
+    },
+    "Mysterious Room": {
+        "item": "Glistening Ring",
+        "n": "...",
+        "coords": [4, 7]
+    },
+    "Elevator Shaft": {
+        "status": "bound",
+        "unbind": "Glistening Ring",
+        "s": "North Wing",
+        "coords": [5, 1]
+    }
+}

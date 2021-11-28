@@ -1,0 +1,95 @@
+{
+    "Dark Room": {
+        "s": "Kitchen",
+        "e": "Dining Room",
+        "coords": [5, 2]
+    },
+    "Kitchen": {
+        "n": "Dark Room",
+        "e": "Living Room",
+        "s": "North Hall",
+        "coords": [5, 3]
+    },
+    "Dining Room": {
+        "item": "monster",
+        "w": "Dark Room",
+        "s": "Living Room",
+        "coords": [6, 2]
+    },
+    "Living Room": {
+        "n": "Dining Room",
+        "w": "Kitchen",
+        "s": "Foyer",
+        "e": "Storage Closet",
+        "coords": [6, 3]
+    },
+    "Storage Closet": {
+        "status": "locked",
+        "item": "sword",
+        "w": "Living Room",
+        "coords": [7, 3]
+    },
+    "Foyer": {
+        "n": "Living Room",
+        "e": "Stairwell",
+        "s": "Bathroom",
+        "coords": [6, 4]
+    },
+    "Bathroom": {
+        "n": "Foyer",
+        "w": "North Hall",
+        "coords": [6, 5]
+    },
+    "North Hall": {
+        "n": "Kitchen",
+        "w": "Trophy Room",
+        "e": "Bathroom",
+        "s": "South Hall",
+        "coords": [5, 4],
+        "height": 2,
+        "e_placement": 3
+    },
+    "Trophy Room": {
+        "item": "monster",
+        "e": "North Hall",
+        "s": "Studio",
+        "coords": [4, 4]
+    },
+    "Studio": {
+        "n": "Trophy Room",
+        "coords": [4, 5]
+    },
+    "South Hall": {
+        "n": "North Hall",
+        "w": "West Hall",
+        "e": "East Hall",
+        "coords": [5, 6]
+    },
+    "East Hall": {
+        "w": "South Hall",
+        "s": "Music Room",
+        "coords": [6, 6]
+    },
+    "Music Room": {
+        "item": "key",
+        "n": "East Hall",
+        "coords": [6, 7]
+    },
+    "West Hall": {
+        "item": "monster",
+        "e": "South Hall",
+        "w": "Study",
+        "coords": [4, 6]
+    },
+    "Study": {
+        "item": "Strange Tome",
+        "e": "West Hall",
+        "coords": [3, 6]
+    },
+    "Stairwell": {
+        "status": "bound",
+        "unbind": "Strange Tome",
+        "w": "Foyer",
+        "coords": [7, 4]
+    }
+}
