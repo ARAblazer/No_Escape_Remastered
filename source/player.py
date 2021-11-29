@@ -28,7 +28,8 @@ class Player:
         """
         # Make sure the item is in the room
         if 'item' in current_room:
-            if item in current_room['item']:
+            if item.lower() == current_room['item'].lower():
+                item = current_room['item']
                 # Add the item to the player's inventory and remove it from the room
                 self.inventory.append(item)
                 del current_room['item']

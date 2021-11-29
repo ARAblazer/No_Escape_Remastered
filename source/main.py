@@ -63,6 +63,10 @@ def level_two(stdscr, game):
     interface.result_window.addstr(2, 0, 'You fall...')
     interface.result_window.refresh()
     sleep(5)
+    interface.result_window.clear()
+    interface.result_window.addstr(3, 0, 'You awaken to find yourself in the \nCellar with none of your items.')
+    interface.result_window.refresh()
+    sleep(3)
 
     interface.start_level('LEVEL THREE', level_function=level_three)
 
@@ -74,11 +78,6 @@ def level_three(stdscr):
         rooms = json.load(rooms_file)
 
     game = Game(Player([]), Map(rooms, 'Cellar'))
-
-    interface.result_window.clear()
-    interface.result_window.addstr('You awaken to find yourself in the \nCellar with none of your items.')
-    interface.result_window.refresh()
-    sleep(3)
 
     interface.main_loop(game, level_three, 'Exit')
 

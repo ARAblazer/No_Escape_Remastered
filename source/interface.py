@@ -19,6 +19,7 @@ curses.init_pair(3, curses.COLOR_CYAN + 8, curses.COLOR_BLACK)
 curses.init_pair(4, curses.COLOR_MAGENTA + 8, curses.COLOR_BLACK)
 curses.init_pair(5, curses.COLOR_GREEN + 8, curses.COLOR_BLACK)
 curses.init_pair(6, curses.COLOR_BLUE + 8, curses.COLOR_BLACK)
+curses.init_pair(7, curses.COLOR_BLACK + 8, curses.COLOR_BLACK)
 
 RED = curses.color_pair(1)
 YELLOW = curses.color_pair(2)
@@ -26,6 +27,7 @@ CYAN = curses.color_pair(3)
 PURPLE = curses.color_pair(4)
 GREEN = curses.color_pair(5)
 BLUE = curses.color_pair(6)
+GREY = curses.color_pair(7)
 
 
 class Interface:
@@ -52,10 +54,13 @@ class Interface:
         self.result_height = result_height
         self.map_width = map_width
 
-        self.display_window = curses.newwin(self.height, self.display_width, 0, 0)
-        self.repr_window = curses.newwin(self.repr_height, self.display_width - 2, 1, 1)
-        self.result_window = curses.newwin(self.result_height, self.display_width - 2, self.repr_height + 2, 1)
-        self.map_window = curses.newwin(self.height, self.map_width, 0, self.display_width)
+        self.y_buffer = (curses.LINES - self.height) // 2
+        self.x_buffer = (curses.COLS - (self.display_width + self.map_width)) // 2
+
+        self.display_window = curses.newwin(self.height, self.display_width, self.y_buffer, self.x_buffer)
+        self.repr_window = curses.newwin(self.repr_height, self.display_width - 2,  self.y_buffer + 1, self.x_buffer + 1)
+        self.result_window = curses.newwin(self.result_height, self.display_width - 2,  self.y_buffer + 1 + self.repr_height + 1, self.x_buffer + 1)
+        self.map_window = curses.newwin(self.height, self.map_width, self.y_buffer, self.x_buffer + self.display_width)
 
         # Hide the cursor
         curses.curs_set(False)
@@ -98,13 +103,13 @@ class Interface:
                 self.repr_window.addstr(index, len(line[0]), ' a ')
 
                 # Item name color changes based on what item it is
-                if line[1].strip() == 'key':
+                if line[1].strip().lower() == 'key':
                     color = YELLOW
-                elif line[1].strip() == 'hammer':
-                    color = GREEN
-                elif line[1].strip() == 'sword':
+                elif line[1].strip().lower() == 'hammer':
                     color = CYAN
-                elif line[1].strip() == 'monster':
+                elif line[1].strip().lower() == 'sword':
+                    color = GREY
+                elif line[1].strip().lower() == 'monster':
                     color = RED
                 else:
                     color = PURPLE
@@ -131,12 +136,12 @@ class Interface:
                 self.result_window.addstr(0, len(result[0]), ' the ')
 
                 # Item names are displayed in their respective colors
-                if result[1].strip() == 'key!':
+                if result[1].strip().lower() == 'key!':
                     color = YELLOW
-                elif result[1].strip() == 'hammer!':
-                    color = GREEN
-                elif result[1].strip() == 'sword!':
+                elif result[1].strip().lower() == 'hammer!':
                     color = CYAN
+                elif result[1].strip().lower() == 'sword!':
+                    color = GREY
                 else:
                     color = PURPLE
 
@@ -172,9 +177,9 @@ class Interface:
                 if map.rooms[room[2]]['item'] == 'key':
                     color = YELLOW
                 elif map.rooms[room[2]]['item'] == 'hammer':
-                    color = GREEN
-                elif map.rooms[room[2]]['item'] == 'sword':
                     color = CYAN
+                elif map.rooms[room[2]]['item'] == 'sword':
+                    color = GREY
                 elif map.rooms[room[2]]['item'] == 'monster':
                     color = RED
                 else:
@@ -282,7 +287,7 @@ class Interface:
 
         while True:
             # Resize the terminal every iteration (prevents crashes from the window being resized)
-            curses.resizeterm(self.height, self.display_width + self.map_width)
+            curses.resizeterm(self.height + self.y_buffer * 2, self.display_width + self.map_width + self.x_buffer * 2)
             # Hide the cursor
             curses.curs_set(False)
 
